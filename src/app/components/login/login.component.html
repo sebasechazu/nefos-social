@@ -1,0 +1,25 @@
+<div class="card flex justify-content-center">
+
+    <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '400px' }">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+        </ng-template>
+
+        <form [formGroup]="logigForm" (ngSubmit)="onSubmit()">
+
+            <label for="mail">mail</label>
+            <input id="mail" type="text" pInputText formControlName="mail" />
+
+            <label for="password">Password</label>
+            <input id="password" type="text" pInputText formControlName="password" />
+
+        </form>
+        <ng-template pTemplate="footer">
+            <div class="flex gap-3 mt-1">
+                <p-button label="Submit" type="submit" [disabled]="!loginForm.valid"
+                    styleClass="w-full" />
+            </div>
+        </ng-template>
+        
+    </p-card>
+</div>
